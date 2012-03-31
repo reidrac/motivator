@@ -53,10 +53,10 @@ def welcome_view(request, template="index.html"):
     except Motivator.DoesNotExist:
         motivator = None
     else:
-        if motivator.count() > 1:
+        if motivator:
             motivator = random.choice(motivator)
         else:
-            motivator = motivator[0]
+            motivator = None
 
     return render_to_response(template, dict(settings=settings, motivator=motivator), context_instance=RequestContext(request))
 
