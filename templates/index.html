@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% block title %}Get some motivation!{% endblock %}
+
+{% block extra_head %}
+<link rel="alternate" title="RSS 2.0" href="/rss" type="application/rss+xml" />
+<meta property="og:title" content="Get Motivation" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ settings.SITE_BASE }}" />
+<meta property="og:image" content="{{ motivator.thumb_img }}" />
+<meta property="og:site_name" content="Motivator" />
+<meta property="og:description" content="Create your own motivational (or demotivational) image and share it with your friends. It's free!" />
+<script type="text/javascript">
+//<!--
+$(function () {
+	$("#id_form").submit(function () {
+		$("#id_submit_frame").addClass('loading');
+	});
+});
+//-->
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="left">
+  <p><span style="display: inline-table; vertical-align: top;"><fb:like layout="button_count"></fb:like></span>
+  <span style="display: inline-table; vertical-align: top;"><a href="http://twitter.com/share" class="twitter-share-button">Tweet</a></span>
+  <span style="display: inline-table; vertical-align: top;"><a href="http://fusion.google.com/add?source=atgs&feedurl=http%3A//motivator.usebox.net/rss"><img src="/static/images/plus_google.gif" alt="Add to Google" style="vertical-align: top;" /></a></span>
+  </p>
+  <p>Create your own motivational (or demotivational) image and share it with your friends. It's free!</p>
+  <form id="id_form" enctype="multipart/form-data" method="post" action="{% url motivator.public.views.init_creator_view %}">
+  <h2>Upload an image:</h2>
+  <p><input type="file" name="file" /></p>
+  <h2>Or get one online:</h2>
+  <p><input type="text" name="url" value="http://" onclick="this.select();" /></p>
+  <h2>And create your motivator!</h2>
+  <p><span id="id_submit_frame"><input id="id_submit" type="submit" value="Start now" /></span></p>
+  {% csrf_token %}
+  </form>
+</div>
+<div class="right">
+{% if motivator %}
+<a href="{{ motivator.url }}" title="Click to share"><img src="{{ motivator.img }}" alt="{{ motivator.title }}" /></a>
+{% else %}
+<img src="/static/images/current.jpg" alt="Motivator" />
+{% endif %}
+</div>
+{% endblock %}
+

@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block title %}Create your own motivator{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block extra_head %}
+<style type="text/css">
+#header { padding-top: 2em; }
+#content label { display: inline-block; width: 40px; }
+#content p.pad { margin-left: 44px; }
+#content form { margin-left: auto; margin-right: auto; text-align: left; width: 24.0em;}
+</style>
+{% endblock %}
+
+{% block content %}
+<div style="text-align: center;">
+	<form method="post" action=".">
+	{{ form.as_p }}
+	<p class="pad"><input type="submit" value="Preview" /> <input name="done" type="submit" value="Done!" /> or <a href="/">Cancel</a></p>
+	{% csrf_token %}
+	</form>
+	<img id="#id_preview" src="{% url motivator.public.views.creator_preview session %}" alt="Preview" />
+</div>
+{% endblock %}
+

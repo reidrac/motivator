@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block description %}Motivator Error -- 500: something bad happened{% endblock %}
+{% block title %}500: Something Bad Happened{% endblock %}
+
+{% block extra_head %}
+<meta name="robots" content="noindex" />
+{% endblock %}
+
+{% block content %}
+<h1>500: Internal Server Error</h1>
+<h2>Something bad happened and we crashed.</h2>
+
+<p>But don't feel bad! Go to our <a href="/">homepage</a> instead.</p>
+{% endblock %}
+

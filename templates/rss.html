@@ -1,0 +1,27 @@
+<rss version="2.0"> 
+<channel> 
+<title>motivator @ usebox.net</title> 
+<link>{{ base_url }}</link> 
+<description>Create your own motivational (or demotivational) image and share it with your friends. This is the RSS feed for the latest 10 motivators.</description> 
+<pubDate>{{ pub_date|date:"r" }}</pubDate> 
+<language>en-gb</language> 
+<copyright>usebox.net, CC BY-NC 3.0 unless stated otherwise - Content provided by the users is property of their respective owners.</copyright> 
+<managingEditor>null@usebox.net</managingEditor> 
+{% for motivator in motivators %}
+{% if forloop.first %}
+<image> 
+<url>{{ motivator.thumb_img }}</url> 
+<title>motivator @ usebox.net</title> 
+<link>{{ base_url }}</link> 
+</image>
+{% endif %}
+<item>
+<title>{{ motivator.title }}</title> 
+<link>{{ motivator.full_url }}?rss=True</link>
+<guid isPermaLink="false">{{ motivator.full_url }}</guid>
+<description><![CDATA[		<p><a href="{{ motivator.full_url }}?rss=True"><img src="{{ motivator.thumb_img }}" /></a></p>		]]></description>
+<pubDate>{{ motivator.created|date:"r" }}</pubDate>
+</item>
+{% endfor %}
+</channel> 
+</rss>

@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block description %}Motivator Error -- 404: not found{% endblock %}
+{% block title %}404: Page not Found{% endblock %}
+
+{% block extra_head %}
+<meta name="robots" content="noindex" />
+{% endblock %}
+
+{% block content %}
+<h1>404: Page not Found</h1>
+<h2>We couldn't find the page you were asking for.</h2>
+
+<p>But don't feel bad! Go to our <a href="/">homepage</a> instead.</p>
+{% endblock %}
+

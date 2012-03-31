@@ -1,0 +1,130 @@
+/*
+Copyright (C) 2011,2012 by Juan J. Martinez <jjm@usebox.net>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: #111;
+	color: #fff;
+
+	font-family: "Times New Roman";
+}
+
+a {
+	color: #94bdf4;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #bdd9ff;
+}
+
+img {
+	vertical-align: middle;
+	border: 0px;
+}
+
+#frame {
+	width: 840px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+#header h1 {
+	color: #fae013;
+	font-size: 5em;
+	margin-bottom: 4px;
+	background-image: url('/static/images/bg-top.jpg');
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	padding-top: 60px;
+	margin: 0px;
+}
+
+#content {
+	padding: 1.0em;
+	border: 2px solid #fae013;
+	background-color: #000;
+	text-align: left;
+}
+
+#content h2 {
+	font-size: 1.2em;
+	color: #fae013;
+}
+
+#footer {
+	font-size: 0.8em;
+}
+
+.right {
+	margin-left: 290px;
+	text-align: right;
+}
+
+.left {
+	float: left;
+	width: 280px;
+}
+
+.loading {
+	padding-right: 20px;
+	background-image: url('/static/images/loading.gif');
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+
+ul.messages {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+.messages li {
+	font-size: 16px;
+	padding: 4px;
+	padding-left: 22px;
+	text-align: left;
+	background-color: #fff499;
+	border-bottom: 1px solid #000;
+	border-radius: 4px;
+}
+
+li.error {
+	color: #c00;
+	background-image: url('/static/images/icon_error.gif');
+	background-repeat: no-repeat;
+	background-position: 4px;
+}
+li.success {
+	color: #00c;
+	background-image: url('/static/images/icon_success.gif');
+	background-repeat: no-repeat;
+	background-position: 4px;
+}
+li.info {
+	background-image: url('/static/images/icon_alert.gif');
+	background-repeat: no-repeat;
+	background-position: 4px;
+}
+

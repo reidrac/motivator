@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="XHTML+RDFa 1.0" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="{% block description %}Create your own motivators and share them with your friends.{% endblock %}" />
+<link rel="SHORTCUT ICON" href="/favicon.ico" />
+<link href="/static/css/default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/static/js/jquery.js"></script>
+{% block extra_head %}{% endblock %}
+<title>{% block title %}{% endblock %}</title>
+<script type="text/javascript" src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+<script type="text/javascript"><!--
+if(top.location != self.location) top.location = self.location;
+--></script>
+</head>
+<body>
+  <div id="frame">
+	<div id="header">
+    {% block header %}<h1>MOTIVATION</h1>{% endblock %}
+	</div>
+    <div id="content">
+	{% if messages %}
+		<ul class="messages">
+		{% for message in messages %}
+		<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	{% endif %}
+    {% block content %}{% endblock %}
+	</div>
+    <div id="footer">
+     <p>Copyright &copy; 2011, 2012 <a href="http://www.usebox.net/">usebox.net</a>, <a href="http://creativecommons.org/licenses/by-nc/3.0/">CC BY-NC 3.0</a> unless stated otherwhise.
+	 Content provided by the users is property of their respective owners.</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block description %}Motivator -- {{ motivator.title }}: {{ motivator.text }}{% endblock %}
+{% block title %}Motivator: {{ motivator.title }}{% endblock %}
+
+{% block extra_head %}
+<meta property="og:title" content="{{ motivator.title }}" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="{{ motivator.full_url}}" />
+<meta property="og:image" content="{{ motivator.thumb_img }}" />
+<meta property="og:site_name" content="Motivator" />
+<meta property="og:description" content="{{ motivator.text|default:'No words' }}" />
+<style type="text/css">
+#content { text-align: center; padding-top: 0px; }
+#content .buttons span { display: inline-table; vertical-align: top; }
+#content p.main { margin-left: 120px; margin-right: 120px; }
+#content p.buttons { margin-left: 120px; margin-right: 120px; }
+</style>
+{% endblock %}
+
+{% block header %}
+ <p>Create your own motivational (or demotivational) image and share it with your friends. <a href="/">Start now</a>, it's free!</p>
+{% endblock %}
+
+{% block content %}
+{% if mprevious %}
+<p style="float: left;"><a href="{{ mprevious.url }}" title="Previous motivator"><img src="{{ mprevious.thumb_img }}" alt="{{ mprevious.title }}" /></a></p>
+{% endif %}
+{% if mnext %}
+<p style="float: right;"><a href="{{ mnext.url }}" title="Next motivator"><img src="{{ mnext.thumb_img }}" alt="{{ mnext.title }}" /></a></p>
+{% endif %}
+ <p class="buttons"><span><a href="http://twitter.com/share" class="twitter-share-button">Tweet</a></span>
+ <span style="margin-right: 12px;"><script type="text/javascript" src="http://www.reddit.com/static/button/button1.js"></script></span>
+<span><fb:like layout="button_count"></fb:like></span>
+<br /><br />
+URL to share: <input type="text" value="{{ motivator.full_url }}" onclick="this.select();" />
+ </p>
+<p class="main"><a href="{{ motivator.full_img }}" title="Click to view full size"><img src="{{ motivator.img}}" alt="{{ motivator.title }}: {{ motivator.text|default:'No words' }}" /></a></p>
+{% endblock %}
+

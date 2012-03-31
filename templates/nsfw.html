@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block description %}Motivator NSFW -- {{ motivator.title }}: {{ motivator.text }}{% endblock %}
+{% block title %}Motivator NSFW: {{ motivator.title }}{% endblock %}
+
+{% block extra_head %}
+<meta name="robots" content="noindex" />
+{% endblock %}
+{% block header %}
+
+ <p>Create your own motivational (or demotivational) image and share it with your friends. <a href="/">Start now</a>, it's free!</p>
+{% endblock %}
+
+{% block content %}
+<h2>Content NSFW</h2>
+
+<p>The page you're trying to access is flagged as <strong>Not Safe For Work</strong> and it may be disturbing for some audiences.</p>
+<p><a href="{{ motivator.url }}?ok-nsfw=True">Cotinue</a> or <a href="/">Cancel</a></p>
+{% endblock %}
+
