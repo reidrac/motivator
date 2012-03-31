@@ -4,7 +4,7 @@ Motivators
 This is a Django application to generare [motivational posters][1] by
 uploading images or providing an URL to an online image.
 
-The site can be found live at: [Motivators](http://motivator.usebox.net/)
+The application can be found live at: [Motivators](http://motivator.usebox.net/).
 
 [1]: https://en.wikipedia.org/wiki/Motivational_poster "Wikipedia entry for motivational posters"
 
