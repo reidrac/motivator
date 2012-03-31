@@ -16,7 +16,7 @@ Requirements
  - Python Imaging Library 1.1.7 (if you install it with PIP, you must
    ensure you get JPEG, PNG and FREETYPE support)
  - A TTF font (Times works best) in data/font.ttf
- - jQuery 1.5 or later is required (1.5.2 in included in static/)
+ - jQuery 1.5 or later is required (1.5.2 in included in static/).
 
 There is a flag additional to DEBUG in settings.py: DEV. It's used
 to serve static content using Django dev server.
@@ -29,6 +29,6 @@ Author
 License
 -------
 
-This is free source under MIT license. Please check COPYING file for more
+This is free software under MIT license. Please check COPYING file for more
 details.
 
