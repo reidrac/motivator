@@ -1,0 +1,5 @@
+*.pyc
+media/
+data/database.sqlite3
+data/django_cache
+
