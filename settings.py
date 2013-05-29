@@ -72,3 +72,9 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 CACHE_BACKEND = 'file:///tmp/django_cache'
 
+# load local settings (if available)
+try:
+    from local import *
+except ImportError:
+    pass
+
