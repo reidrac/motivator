@@ -19,6 +19,17 @@ Requirements
 There is a flag additional to DEBUG in settings.py: DEV. It's used
 to serve static content using Django dev server.
 
+Configuration
+-------------
+
+Create a local.py file with your local configuration including (at least):
+
+ - SECRET\_KEY
+ - ADMINS
+ - DEBUG (set to False for production)
+ - SITE\_BASE
+ - MEDIA\_URL
+
 Author
 ------
 
