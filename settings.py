@@ -1,6 +1,5 @@
 # Django settings for motivator project.
 
-DEV = True
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
