@@ -10,7 +10,7 @@ Requirements
 ------------
 
  - Python 2.6
- - Django 1.2.5 (later version may work)
+ - Django 1.2.5 (later versions may need some work)
  - Python Imaging Library 1.1.7 (if you install it with PIP, you must
    ensure you get JPEG, PNG and FREETYPE support)
  - A TTF font (Times works best) in data/font.ttf
